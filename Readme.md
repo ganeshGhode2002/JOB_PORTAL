@@ -30,7 +30,4 @@ A fully-functional **Job Portal Web Application** built using the **MERN stack (
 
 ---
 
-## 📸 Screenshots
-
-> _Add screenshots/gifs here to show the UI_
 
