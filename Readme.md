@@ -34,20 +34,3 @@ A fully-functional **Job Portal Web Application** built using the **MERN stack (
 
 > _Add screenshots/gifs here to show the UI_
 
-
-
-├── backend
-│   ├── controllers
-│   ├── models
-│   ├── routes
-│   ├── middlewares
-│   └── server.js
-│
-├── frontend
-│   ├── src
-│   │   ├── components
-│   │   ├── pages
-│   │   ├── services (API calls)
-│   │   └── App.js
-│
-└── README.md
