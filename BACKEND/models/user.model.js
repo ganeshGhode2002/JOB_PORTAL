@@ -15,7 +15,7 @@ const userSchema = new mongoose.Schema(
     },
     phone: {
       type: String,
-      required: [true, 'Phone number is required']
+     
     },
     password: {
         type: String,
@@ -23,8 +23,8 @@ const userSchema = new mongoose.Schema(
       },
     role: {
       type: String,
-      enum: ['jobseeker', 'recruiter'],
-      default: 'jobseeker'
+      enum: ['student', 'recruiter'],
+      default: 'student'
     },
     profile: {
       bio: {
