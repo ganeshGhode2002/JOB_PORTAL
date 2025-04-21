@@ -5,7 +5,8 @@ const companySchema = new mongoose.Schema(
     name: {
       type: String,
       required: [true, 'Company name is required'],
-      trim: true
+      trim: true,
+      unique:true
     },
     description: {
       type: String,
@@ -31,22 +32,22 @@ const companySchema = new mongoose.Schema(
       type: String, // e.g., "11-50", "51-200", etc.
       default: ''
     },
-    recruiter: {
+    userId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
       required: true
     },
-    jobs: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Job'
-      }
-    ],
-    applications:
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Aplications'
-    }
+    // jobs: [
+    //   {
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: 'Job'
+    //   }
+    // ],
+    // applications:
+    // {
+    //   type: mongoose.Schema.Types.ObjectId,
+    //   ref: 'Aplications'
+    // }
   },
   {
     timestamps: true

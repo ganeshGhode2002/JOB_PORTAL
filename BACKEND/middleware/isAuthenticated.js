@@ -5,7 +5,7 @@ const isAuthenticated = async (req, res, next) => {
         const token = req.cookies.token;
         if (!token) {
             return res.status(401).json({
-                message: "token not found",
+                message: "user is not authenticated",
                 succes: false
             })
         }
@@ -18,6 +18,7 @@ const isAuthenticated = async (req, res, next) => {
         }
 
         req.id = decode.userId;
+        // console.log("auth userId: ",req.id)
         next();
 
     } catch (error) {
