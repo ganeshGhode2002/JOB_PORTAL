@@ -118,3 +118,39 @@ export const logOut = async (req, res) => {
         })
     }
 }
+
+
+
+// Update user profile
+export const updateProfile = async (req, res) => {
+  try {
+    const userId = req.id;
+    const { fullname, email, phone, bio } = req.body;
+
+    const updatedUser = await User.findByIdAndUpdate(
+      userId,
+      {
+        $set: {
+          fullname,
+          email,
+          phone,
+          bio,
+        },
+      },
+      { new: true } // Return the updated document
+    ).select("-password"); // Don't return password
+
+    res.status(200).json({
+      success: true,
+      message: "Profile updated successfully",
+      user: updatedUser,
+    });
+  } catch (error) {
+    console.error("Error updating profile:", error);
+    res.status(500).json({
+      success: false,
+      message: "Server error while updating profile",
+    });
+  }
+};
+
