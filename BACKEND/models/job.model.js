@@ -8,7 +8,6 @@ const jobSchema = new mongoose.Schema(
       trim: true
     },
     company: {
-
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Company',
       required: [true, 'Company name is required']
@@ -33,7 +32,15 @@ const jobSchema = new mongoose.Schema(
     salary: {
       type: String
     },
-    postedBy: {
+    position: {
+      type: String,
+      require: true
+    },
+    experince: {
+      type: Number,
+      require: true
+    },
+    created_by: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
       required: true
@@ -44,8 +51,7 @@ const jobSchema = new mongoose.Schema(
         resume: String,
         status: {
           type: String,
-          enum: ['Applied', 'Shortlisted', 'Rejected', 'Interview'],
-          default: 'Applied'
+          enum: ['Applied', 'Shortlisted', 'Rejected', 'Interview']
         },
         appliedAt: {
           type: Date,

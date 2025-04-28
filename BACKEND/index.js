@@ -6,6 +6,7 @@ import connectDb from './db/connect.js'
 import cookieParser from 'cookie-parser';
 import userRoutes from './routes/user.routes.js';
 import companyRoutes from './routes/company.routes.js';
+import jobsRoutes from './routes/jobs.routes.js';
 
 dotenv.config({})
 
@@ -30,6 +31,7 @@ app.use(cookieParser())
 
 app.use("/user", userRoutes)
 app.use("/api/v1/company", companyRoutes)
+app.use("/api/v1/job", jobsRoutes)
 
 
 
